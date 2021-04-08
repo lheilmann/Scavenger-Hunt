@@ -2,6 +2,8 @@ import mapboxgl from "mapbox-gl";
 import React, { useEffect, useRef } from "react";
 import { ArrowLeft } from "react-feather";
 import styled from "styled-components";
+// eslint-disable-next-line
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 
 import TasksForToday from "../components/TasksForToday";
 import Title from "../components/Typography/Title";
@@ -10,6 +12,7 @@ import DefaultPage from "./_layouts/DefaultPage";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibGhlaWxtYW5uIiwiYSI6ImNpbWozNHdlZDAwMG92dW00MmRjbW1nemsifQ.vPd3A5f_i5757K5B2hDMfw";
+mapboxgl.workerClass = MapboxWorker;
 
 const MapContainer = styled.div`
   height: 200px;
