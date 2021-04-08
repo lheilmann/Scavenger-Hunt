@@ -64,6 +64,7 @@ function FeedbackKastrup() {
         <CenteredTitle>Oh snap!</CenteredTitle>
       </Header>
       <ActionRow>
+        {/* eslint-disable-next-line */}
         <Message>You didn't catch an item. Try again!</Message>
       </ActionRow>
       <Row>
