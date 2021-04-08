@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import Button from "../components/Button";
 import TasksForToday from "../components/TasksForToday";
-import SuccessTitle from "../components/Typography/SuccessTitle";
+import ErrorTitle from "../components/Typography/ErrorTitle";
 import { blue300, gray300 } from "../constants";
 import DefaultPage from "./_layouts/DefaultPage";
 
@@ -44,7 +44,7 @@ const Back = styled.a`
   flex: 1;
 `;
 
-const CenteredTitle = styled(SuccessTitle)`
+const CenteredTitle = styled(ErrorTitle)`
   flex: auto;
 `;
 
@@ -52,23 +52,19 @@ const Message = styled.p`
   text-align: center;
 `;
 
-function FeedbackCityCenter() {
+function FeedbackKastrup() {
   const history = useHistory();
 
   return (
     <DefaultPage>
       <Header>
-        <Back href="/cameras/65ldui">
+        <Back href="/cameras/6c3yh4">
           <ArrowLeft size="32" />
         </Back>
-        <CenteredTitle>Whoop whoop</CenteredTitle>
+        <CenteredTitle>Oh snap!</CenteredTitle>
       </Header>
       <ActionRow>
-        <Message>
-          Congratulations!
-          <br />
-          You found the yellow bus. 🎉
-        </Message>
+        <Message>You didn't catch an item. Try again!</Message>
       </ActionRow>
       <Row>
         <Col>
@@ -79,11 +75,11 @@ function FeedbackCityCenter() {
       <ActionRow>
         <Button
           primary
-          onClick={() => history.push("/cameras/65ldui")}
+          onClick={() => history.push("/cameras/6c3yh4")}
           Icon={ArrowLeft}
           iconPosition="left"
         >
-          Continue at Rådhuspladsen
+          Continue at Amager Strand
         </Button>
       </ActionRow>
       <ActionRow>
@@ -95,4 +91,4 @@ function FeedbackCityCenter() {
   );
 }
 
-export default FeedbackCityCenter;
+export default FeedbackKastrup;

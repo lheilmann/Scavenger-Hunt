@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft, ArrowRight } from "react-feather";
+import { ArrowLeft } from "react-feather";
 import { useHistory } from "react-router";
 import styled from "styled-components";
 
@@ -39,23 +39,6 @@ const SubHeading = styled.h4`
   margin: 12px 0;
 `;
 
-const Badge = styled.span`
-  display: inline-flex;
-  border-radius: 4px;
-  padding: 2px 4px;
-  margin-left: 12px;
-`;
-
-const BadgeDone = styled(Badge)`
-  background-color: ${blue300};
-  color: white;
-  border: 1px solid ${blue300};
-`;
-
-const BadgeTotal = styled(BadgeDone)`
-  margin: 0 12px;
-`;
-
 const Back = styled.a`
   color: ${blue300};
   flex: 1;
@@ -69,20 +52,13 @@ const Message = styled.p`
   text-align: center;
 `;
 
-const Hint = styled.div`
-  color: ${gray300};
-`;
-
-const Amount = styled.span`
-  color: ${blue300};
-`;
-
-function FeedbackOsterbro() {
+function FeedbackAmager() {
   const history = useHistory();
+
   return (
     <DefaultPage>
       <Header>
-        <Back href="/cameras/am5bg7">
+        <Back href="/cameras/6c3yh4">
           <ArrowLeft size="32" />
         </Back>
         <CenteredTitle>Whoop whoop</CenteredTitle>
@@ -91,7 +67,7 @@ function FeedbackOsterbro() {
         <Message>
           Congratulations!
           <br />
-          You found a red hat. 🎉
+          You found the stop sign. 🎉
         </Message>
       </ActionRow>
       <Row>
@@ -101,40 +77,22 @@ function FeedbackOsterbro() {
         </Col>
       </Row>
       <ActionRow>
-        <Message>
-          <b>
-            You earned
-            <BadgeTotal>
-              <small>+ 16 points</small>
-            </BadgeTotal>
-            today! <br />
-          </b>
-          <Hint>(Rank 1,576 in Copenhagen City)</Hint>
-        </Message>
-      </ActionRow>
-      <ActionRow>
-        <Message>
-          <b>
-            You unlocked{" "}
-            <Amount>
-              <b>1</b>
-            </Amount>{" "}
-            surveillance camera!
-          </b>
-        </Message>
-      </ActionRow>
-      <ActionRow>
         <Button
           primary
-          onClick={() => history.push("/new-camera")}
-          Icon={ArrowRight}
-          iconPosition="right"
+          onClick={() => history.push("/cameras/6c3yh4")}
+          Icon={ArrowLeft}
+          iconPosition="left"
         >
-          Check out new camera
+          Continue on Amager
+        </Button>
+      </ActionRow>
+      <ActionRow>
+        <Button primary inverted onClick={() => history.push("/map")}>
+          Back to map
         </Button>
       </ActionRow>
     </DefaultPage>
   );
 }
 
-export default FeedbackOsterbro;
+export default FeedbackAmager;

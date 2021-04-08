@@ -43,7 +43,7 @@ function Map() {
       container: ref.current,
       style: "mapbox://styles/mapbox/light-v10",
       center: [12.5669, 55.6759],
-      zoom: 11,
+      zoom: 10,
     });
 
     const markers = [
@@ -55,21 +55,21 @@ function Map() {
       },
       {
         id: "5cu15i",
-        suffix: "N",
-        lng: "12.5475993",
-        lat: "55.693712",
+        suffix: "K",
+        lng: "12.646760",
+        lat: "55.646183",
       },
       {
         id: "6c3yh4",
         suffix: "A",
-        lng: "12.6010453",
-        lat: "55.663039",
+        lng: "12.598280",
+        lat: "55.662629",
       },
       {
         id: "am5bg7",
         suffix: "O",
-        lng: "12.5832",
-        lat: "55.7003",
+        lng: "12.5571114",
+        lat: "55.707532",
       },
     ];
 

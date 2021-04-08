@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
+import FeedbackAmager from "./pages/FeedbackAmager";
 import FeedbackCityCenter from "./pages/FeedbackCityCenter";
+import FeedbackKastrup from "./pages/FeedbackKastrup";
 import FeedbackOsterbro from "./pages/FeedbackOsterbro";
 import Goodbye from "./pages/Goodbye";
 import Home from "./pages/Home";
@@ -9,8 +11,8 @@ import Map from "./pages/Map";
 import MapOnNewYork from "./pages/MapOnNewYork";
 import StreamAmager from "./pages/StreamAmager";
 import StreamCityCenter from "./pages/StreamCityCenter";
+import StreamKastrup from "./pages/StreamKastrup";
 import StreamNewYork from "./pages/StreamNewYork";
-import StreamNorrebro from "./pages/StreamNorrebro";
 import StreamOsterbro from "./pages/StreamOsterbro";
 import Today from "./pages/Today";
 import GlobalStyleProvider from "./providers/GlobalStyleProvider";
@@ -30,11 +32,11 @@ function App() {
             component={FeedbackCityCenter}
           />
           <Route path="/cameras/65ldui" component={StreamCityCenter} />
-          <Route path="/cameras/5cu15i/feedback" component={StreamNorrebro} />
-          <Route path="/cameras/5cu15i" component={StreamNorrebro} />
+          <Route path="/cameras/5cu15i/feedback" component={FeedbackKastrup} />
+          <Route path="/cameras/5cu15i" component={StreamKastrup} />
           <Route path="/cameras/am5bg7/feedback" component={FeedbackOsterbro} />
           <Route path="/cameras/am5bg7" component={StreamOsterbro} />
-          <Route path="/cameras/6c3yh4/feedback" component={StreamAmager} />
+          <Route path="/cameras/6c3yh4/feedback" component={FeedbackAmager} />
           <Route path="/cameras/6c3yh4" component={StreamAmager} />
           <Route path="/new-camera" component={MapOnNewYork} />
           <Route path="/cameras/pn0kfe" component={StreamNewYork} />

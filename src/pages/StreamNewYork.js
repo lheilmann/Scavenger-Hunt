@@ -69,7 +69,7 @@ function StreamNewYork() {
       <Row>
         <p>
           You unlocked a new surveillance camera in New York city. Happy
-          watching!
+          watching! 👀
         </p>
       </Row>
       <Row>

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { ArrowLeft, Minus } from "react-feather";
+import { ArrowLeft } from "react-feather";
 import { useHistory } from "react-router";
 import styled from "styled-components";
 
+import TasksForToday from "../components/TasksForToday";
 import Title from "../components/Typography/Title";
 import { blue300, gray300 } from "../constants";
 import DefaultPage from "./_layouts/DefaultPage";
@@ -30,42 +31,6 @@ const SubHeading = styled.h4`
   text-transform: uppercase;
   color: ${gray300};
   margin: 12px 0;
-`;
-
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0;
-  margin: 6px 0;
-  list-style-type: none;
-`;
-
-const ListItemPending = styled(ListItem)`
-  color: black;
-`;
-
-const Icon = styled.div`
-  margin-right: 12px;
-`;
-
-const Badge = styled.span`
-  display: flex;
-  border-radius: 4px;
-  padding: 2px 4px;
-  margin-left: 12px;
-`;
-
-const BadgePending = styled(Badge)`
-  background-color: white;
-  color: ${blue300};
-  border: 1px solid ${blue300};
 `;
 
 const Back = styled.a`
@@ -109,10 +74,16 @@ function Home() {
     video.play();
   }, []);
 
+  const handleClick = () => {
+    localStorage.setItem("scavenger-hunt.item.yellow-bus", true);
+
+    history.push("/cameras/65ldui/feedback");
+  };
+
   return (
     <DefaultPage>
       <Header>
-        <Back href="/home">
+        <Back href="/map">
           <ArrowLeft size="32" />
         </Back>
         <CenteredTitle>Look closely</CenteredTitle>
@@ -120,41 +91,11 @@ function Home() {
       <Row>
         <Col>
           <SubHeading>Your items for today</SubHeading>
-          <List>
-            <ListItemPending>
-              <Icon>
-                <Minus size="20" />
-              </Icon>
-              <span>A yellow bus</span>
-              <BadgePending>
-                <small>1 point</small>
-              </BadgePending>
-            </ListItemPending>
-            <ListItemPending>
-              <Icon>
-                <Minus size="20" />
-              </Icon>
-              <span>A person wearing gray sweatpants</span>
-              <BadgePending>
-                <small>5 points</small>
-              </BadgePending>
-            </ListItemPending>
-            <ListItemPending>
-              <Icon>
-                <Minus size="20" />
-              </Icon>
-              <span>A person wearing a red hat</span>
-              <BadgePending>
-                <small>10 points</small>
-              </BadgePending>
-            </ListItemPending>
-          </List>
+          <TasksForToday />
         </Col>
       </Row>
       <Row>
-        <VideoContainer
-          onClick={() => history.push("/cameras/65ldui/feedback")}
-        >
+        <VideoContainer onClick={handleClick}>
           <Video loop id="stream">
             <source src="/videos/streamC.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -163,7 +104,7 @@ function Home() {
       </Row>
       <Row>
         <Hint>
-          <small>Address: Rådhuspladsen, 1550 København</small>
+          <small>Address: Rådhuspladsen, 1550 København, Denmark</small>
         </Hint>
       </Row>
     </DefaultPage>

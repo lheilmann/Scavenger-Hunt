@@ -1,8 +1,9 @@
 import mapboxgl from "mapbox-gl";
 import React, { useEffect, useRef } from "react";
-import { ArrowLeft, Minus } from "react-feather";
+import { ArrowLeft } from "react-feather";
 import styled from "styled-components";
 
+import TasksForToday from "../components/TasksForToday";
 import Title from "../components/Typography/Title";
 import { blue300, fontFamily, gray300 } from "../constants";
 import DefaultPage from "./_layouts/DefaultPage";
@@ -64,38 +65,6 @@ const SubHeading = styled.h4`
   margin: 12px 0;
 `;
 
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0;
-  margin: 6px 0;
-  list-style-type: none;
-`;
-
-const Icon = styled.div`
-  margin-right: 12px;
-`;
-
-const Badge = styled.span`
-  display: flex;
-  border-radius: 4px;
-  padding: 2px 4px;
-  margin-left: 12px;
-`;
-
-const BadgePending = styled(Badge)`
-  background-color: white;
-  color: ${blue300};
-  border: 1px solid ${blue300};
-`;
-
 function Today() {
   const ref = useRef();
 
@@ -116,21 +85,21 @@ function Today() {
       },
       {
         id: "5cu15i",
-        suffix: "N",
-        lng: "12.5475993",
-        lat: "55.693712",
+        suffix: "K",
+        lng: "12.646760",
+        lat: "55.646183",
       },
       {
         id: "6c3yh4",
         suffix: "A",
-        lng: "12.6010453",
-        lat: "55.663039",
+        lng: "12.598280",
+        lat: "55.662629",
       },
       {
         id: "am5bg7",
         suffix: "O",
-        lng: "12.5832",
-        lat: "55.7003",
+        lng: "12.5571114",
+        lat: "55.707532",
       },
     ];
 
@@ -166,35 +135,7 @@ function Today() {
       <PaddedRow>
         <Col>
           <SubHeading>Your items for today</SubHeading>
-          <List>
-            <ListItem>
-              <Icon>
-                <Minus size="20" />
-              </Icon>
-              <span>A yellow bus</span>
-              <BadgePending>
-                <small>1 point</small>
-              </BadgePending>
-            </ListItem>
-            <ListItem>
-              <Icon>
-                <Minus size="20" />
-              </Icon>
-              <span>A person wearing gray sweatpants</span>
-              <BadgePending>
-                <small>5 points</small>
-              </BadgePending>
-            </ListItem>
-            <ListItem>
-              <Icon>
-                <Minus size="20" />
-              </Icon>
-              <span>A person wearing a red hat</span>
-              <BadgePending>
-                <small>10 points</small>
-              </BadgePending>
-            </ListItem>
-          </List>
+          <TasksForToday />
         </Col>
       </PaddedRow>
       <PaddedRow>

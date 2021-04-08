@@ -65,7 +65,7 @@ const Hint = styled.div`
   color: ${gray300};
 `;
 
-function StreamOsterbro() {
+function StreamKastrup() {
   const history = useHistory();
 
   useEffect(() => {
@@ -75,9 +75,7 @@ function StreamOsterbro() {
   }, []);
 
   const handleClick = () => {
-    localStorage.setItem("scavenger-hunt.item.red-hat", true);
-
-    history.push("/cameras/am5bg7/feedback");
+    history.push("/cameras/5cu15i/feedback");
   };
 
   return (
@@ -97,18 +95,18 @@ function StreamOsterbro() {
       <Row>
         <VideoContainer onClick={handleClick}>
           <Video loop id="stream">
-            <source src="/videos/streamO.mp4" type="video/mp4" />
+            <source src="/videos/streamK.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </Video>
         </VideoContainer>
       </Row>
       <Row>
         <Hint>
-          <small>Address: Oliemøllegade 1, 2100 Østerbro, Denmark</small>
+          <small>Address: Amager Strandvej, 2770 Kastrup, Denmark</small>
         </Hint>
       </Row>
     </DefaultPage>
   );
 }
 
-export default StreamOsterbro;
+export default StreamKastrup;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import { green300 } from "../../constants";
+import { red300 } from "../../constants";
 
-const SuccessTitle = styled.h1`
-  text-shadow: 0px 0px 5px ${green300};
+const ErrorTitle = styled.h1`
+  text-shadow: 0px 0px 5px ${red300};
 `;
 
-export default SuccessTitle;
+export default ErrorTitle;
