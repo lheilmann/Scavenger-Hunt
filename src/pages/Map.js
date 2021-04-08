@@ -3,12 +3,15 @@ import React, { useEffect, useRef } from "react";
 import { ArrowLeft, X } from "react-feather";
 import { useHistory } from "react-router";
 import styled from "styled-components";
+// eslint-disable-next-line
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 
 import { blue300 } from "../constants";
 import FullPage from "./_layouts/FullPage";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibGhlaWxtYW5uIiwiYSI6ImNpbWozNHdlZDAwMG92dW00MmRjbW1nemsifQ.vPd3A5f_i5757K5B2hDMfw";
+mapboxgl.workerClass = MapboxWorker;
 
 const MapContainer = styled.div`
   position: absolute;
