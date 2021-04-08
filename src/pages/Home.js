@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import Button from "../components/Button";
 import Title from "../components/Typography/Title";
-import { blue300, gray300, textColor } from "../constants";
+import { blue300, gray300 } from "../constants";
 import DefaultPage from "./_layouts/DefaultPage";
 
 const Row = styled.div`
